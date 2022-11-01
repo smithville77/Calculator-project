@@ -5,8 +5,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
 </head>
 <body>
-  
+
+  <div class="wrapper">
+
+    <div class="display">
+      <div id="displayWindow">9999</div>
+    </div>
+
+    <div class="buttons">
+
+      <div id="numbers">
+        <button class="numberButton" id="One" value="1">1</button>
+        <button class="numberButton" id="2" value="2">2</button>
+        <button class="numberButton" id="3" value="3">3</button>
+        <button class="numberButton" id="4" value="4">4</button>
+        <button class="numberButton" id="5" value="5">5</button>
+        <button class="numberButton" id="6" value="6">6</button>
+        <button class="numberButton" id="7" value="7">7</button>
+        <button class="numberButton" id="8" value="8">8</button>
+        <button class="numberButton" id="9" value="9">9</button>
+        <button class="numberButton" id="0" value="0">0</button>
+      </div>
+
+      <div class="operators">
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">÷</button>
+        <button id="calculate" onclick="updateDisplay()">=</button>
+        <button id="clear" onclick="clearDisplay()">Clear</button>
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
