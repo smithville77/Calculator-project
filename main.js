@@ -1,14 +1,16 @@
-const buttonOne = getElementById("1")
-const buttonTwo = getElementById("2")
-const buttonThree = getElementById("3")
-const buttonFour = getElementById("4")
-const buttonFive = getElementById("5")
-const buttonSix = getElementById("6")
-const buttonSeven = getElementById("7")
-const buttonEight = getElementById("8")
-const buttonNine = getElementById("9")
-const buttonZero = getElementById("0")
+// const buttonOne = getElementById("One");
+// const buttonTwo = getElementById("2")
+// const buttonThree = getElementById("3")
+// const buttonFour = getElementById("4")
+// const buttonFive = getElementById("5")
+// const buttonSix = getElementById("6")
+// const buttonSeven = getElementById("7")
+// const buttonEight = getElementById("8")
+// const buttonNine = getElementById("9")
+// const buttonZero = getElementById("0")
 
+
+// operator functions
 function add(num1, num2){
   return (num1 + num2);
 }
@@ -39,24 +41,26 @@ function operate(operator, num1, num2) {
   }
 }
 
-let displayValue = 0
-const display = document.getElementById("displayWindow");
 
-function numbers() {
-  buttonOne.addEventListener("click", displayValue="1")
-  console.log(displayValue)
-}
+const displayWindow = document.getElementById('displayWindow');
+let displayValue = 8008;
 
+// update display
 function updateDisplay() {
-  
+  document.getElementById("displayWindow").innerHTML = displayValue;
+  console.log(displayValue);
 }
 
 // clear button
-function clear() {
-  display.innerHTML(" ");
+function clearDisplay(displayValue) {
+  displayValue = 0;
+  document.getElementById("displayWindow").innerHTML = displayValue;
+  return displayValue;
 }
 
-updateDisplay();
+
+
+// checks to see if operator functions work;
 console.log(multiply(4, 50))
 console.log(add(6, 6))
 console.log(subtract(10, 5))
