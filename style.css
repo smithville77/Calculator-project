@@ -1,0 +1,73 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.wrapper {
+  height: 400px;
+  width: 350px;
+  margin: auto;
+  padding-top: 30px;
+  background:  linear-gradient(black, rgb(56, 55, 55));
+  border: solid rgb(20, 250, 58) 8px;
+}
+
+.display {
+  width: 70%;
+  margin: auto;
+}
+
+#displayWindow {
+  height: 40px;
+  background-color: black;
+  border: 5px rgb(20, 250, 58) solid;
+  text-align: center;
+  padding-top: 18px;
+  margin-bottom: 40px;
+  color: rgb(7, 248, 7);
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+}
+
+#numbers {
+  float: left;
+  margin-left: 20px;
+  
+}
+
+.numberButton {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border: solid 5px rgb(28, 28, 245);
+  color: blue;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.numberButton:hover {
+  background-color: blue;
+  color: greenyellow;
+}
+
+.operators {
+  float: left;
+}
+
+.operators button {
+  height: 55px;
+  width: 55px;
+  background-color: black;
+  border: solid red 5px;
+  color: red;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.operators button:hover {
+  background-color: red;
+  color: black;
+  font-weight: 700;
+}
