@@ -1,13 +1,3 @@
-// const buttonOne = getElementById("One");
-// const buttonTwo = getElementById("2")
-// const buttonThree = getElementById("3")
-// const buttonFour = getElementById("4")
-// const buttonFive = getElementById("5")
-// const buttonSix = getElementById("6")
-// const buttonSeven = getElementById("7")
-// const buttonEight = getElementById("8")
-// const buttonNine = getElementById("9")
-// const buttonZero = getElementById("0")
 
 
 // operator functions
@@ -27,6 +17,8 @@ function divide(num1, num2) {
   return (num1 / num2);
 }
 
+
+let previousText = "";
 
 let displayValue = "";
 let num1 = "";
@@ -100,7 +92,8 @@ function addZero () {
 
 function addButton () {
   num1 = displayValue;
-  displayText = displayText + " + "
+  displayText = " + "
+  document.getElementById("previous").innerHTML =  displayValue;
   updateDisplay();
   displayValue = "";
   return num1, operator = "add", displayValue;
@@ -109,27 +102,28 @@ function addButton () {
 
 function subtractButton () {
   num1 = displayValue;
-  displayText = displayText + " - "
+  displayText = " - "
+  document.getElementById("previous").innerHTML = displayValue;
   updateDisplay();
   displayValue = "";
   return num1, operator = "subtract", displayValue;
 }
 function multiplyButton () {
   num1 = displayValue;
-  displayText = displayText + " * "
+  displayText = " * "
+  document.getElementById("previous").innerHTML =  displayValue;
   updateDisplay();
   displayValue = "";
   return num1, operator = "multiply", displayValue;
 }
 function divideButton () {
   num1 = displayValue;
-  displayText = displayText + " ÷ "
+  displayText =  " ÷ ";
+  document.getElementById("previous").innerHTML = displayValue;
   updateDisplay();
   displayValue = "";
   return num1, operator = "divide", displayValue;
 }
-
-
 
 // update display
 function updateDisplay() {
@@ -140,46 +134,57 @@ function updateDisplay() {
 function clearDisplay() {
   displayValue = "";
   displayText = "";
+  previousText = "";
   document.getElementById("displayWindow").innerHTML = displayText;
-  // return displayValue = 0;
+  document.getElementById("previous").innerHTML = previousText;
+  
 }
 
-//Not sure if this works(could be completely wrong) --- testing needed
 function operate() {
   num2 = displayValue;
   num1Int = parseInt(num1);
   num2Int = parseInt(num2);
+  
 
   if (operator === "add") {
     result = add(num1Int, num2Int);
+    document.getElementById("previous").innerHTML = `${num1Int} + ${num2Int}`;
     displayValue = result;
     num1Int = result;
-    displayText = displayText + ` = ${result}`;
+    previousText = previousText + displayText;
+    displayText =  ` = ${result}`;
+    
     updateDisplay();
 
   } else if (operator === "subtract") {
     result = subtract(num1Int, num2Int);
+    document.getElementById("previous").innerHTML = `${num1Int} - ${num2Int}`;
     displayValue = result;
     num1Int = result;
-    displayText = displayText + ` = ${result}`;
+    previousText = previousText + displayText;
+    displayText = ` = ${result}`;
     updateDisplay();
   
   } else if (operator === "multiply") {
     result = multiply(num1Int, num2Int);
+    document.getElementById("previous").innerHTML = `${num1Int} * ${num2Int}`;
     displayValue = result;
     num1Int = result;
-    displayText = displayText + ` = ${result}`;
+    previousText = previousText + displayText;
+    displayText =  ` = ${result}`;
     updateDisplay();
 
   } else if (operator === "divide") {
     if (num1Int === 0 || num2Int === 0) {
-      displayText = "Nice try, smartass"
+      displayText = "Nice try, smartass."
       updateDisplay();
     } else {
     result = divide(num1Int, num2Int);
+    document.getElementById("previous").innerHTML = `${num1Int} ÷ ${num2Int}`;
     displayValue = result;
     num1Int = result;
-    displayText = displayText + ` = ${result}`;
+    previousText = previousText + displayText;
+    displayText =  ` = ${result}`;
     updateDisplay(); 
     }
 }
